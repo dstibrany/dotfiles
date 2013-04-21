@@ -22,14 +22,14 @@ ln -s "$DOTFILESHOME"/dotfiles/.zprezto/ "$DOTFILESHOME"/.zprezto
 echo "backing up old dotfiles and linking in new ones"
 
 for rcfile in "$DOTFILESHOME"/dotfiles/runcoms/*; do
-	
+    
     # backup old dotfile, if it exists
-	if [ -f "$DOTFILESHOME/.${rcfile##*/}" ]; then
-	    mv "$DOTFILESHOME/.${rcfile##*/}" "$DOTFILESHOME"/dotfiles/backup/runcoms
-	fi
-	
+    if [ -f "$DOTFILESHOME/.${rcfile##*/}" ]; then
+        mv "$DOTFILESHOME/.${rcfile##*/}" "$DOTFILESHOME"/dotfiles/backup/runcoms
+    fi
+    
     # link new dotfile
-	ln -s "$rcfile" "$DOTFILESHOME/.${rcfile##*/}"
+    ln -s "$rcfile" "$DOTFILESHOME/.${rcfile##*/}"
 done
 
 #backup old bin directory

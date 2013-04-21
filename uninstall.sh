@@ -9,7 +9,7 @@ rm "$DOTFILESHOME"/.z*
 echo "removing current dotfiles"
 
 for rcfile in "$DOTFILESHOME"/dotfiles/runcoms/*; do
-	rm -f "$DOTFILESHOME/.${rcfile##*/}"
+    rm -f "$DOTFILESHOME/.${rcfile##*/}"
 done
 
 echo "restoring old dotfiles"
@@ -17,7 +17,7 @@ echo "restoring old dotfiles"
 shopt -s dotglob
 
 for rcfile in "$DOTFILESHOME"/dotfiles/backup/runcoms/*; do
-	mv $rcfile "$DOTFILESHOME"
+    mv $rcfile "$DOTFILESHOME"
 done
 
 shopt -u dotglob
