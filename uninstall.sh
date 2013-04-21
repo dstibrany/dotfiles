@@ -1,13 +1,34 @@
 #!/bin/bash
 
-echo "Uninstalling dotfiles..."
+DOTFILESHOME="${ZDOTDIR:-$HOME}"
 
-rm "${ZDOTDIR:-$HOME}"/.z*
+echo "uninstalling zprezto"
 
-echo "...done uninstalling dotfiles"
+rm "$DOTFILESHOME"/.z*
+
+echo "removing current dotfiles"
+
+for rcfile in "$DOTFILESHOME"/dotfiles/runcoms/*; do
+	rm -f "$DOTFILESHOME/.${rcfile##*/}"
+done
+
+echo "restoring old dotfiles"
+
+shopt -s dotglob
+
+for rcfile in "$DOTFILESHOME"/dotfiles/backup/runcoms/*; do
+	mv $rcfile "$DOTFILESHOME"
+done
+
+shopt -u dotglob
+
 
 echo "restoring bin folder"
 
-rm "${ZDOTDIR:-$HOME}"/bin
-cp -r "${ZDOTDIR:-$HOME}"/dotfiles/backup/bin "${ZDOTDIR:-$HOME}"
-rm -rf "${ZDOTDIR:-$HOME}"/dotfiles/backup/bin
+rm "$DOTFILESHOME"/bin
+cp -r "$DOTFILESHOME"/dotfiles/backup/bin "$DOTFILESHOME"
+rm -rf "$DOTFILESHOME"/dotfiles/backup
+
+unset DOTFILESHOME
+
+echo "done uninstalling dotfiles"
