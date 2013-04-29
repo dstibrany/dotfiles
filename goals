@@ -6,11 +6,10 @@ X-bash support
 -osx support
 X-bin directory of useful things
 X-should backup existing files, if they exist
--git (git shortcuts)
+X-git (git shortcuts)
 
-aliases
-git aliases
-testing emacs
+TODO:
+bash
+    key bindings
 
 
-    |

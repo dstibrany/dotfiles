@@ -2,6 +2,8 @@
 
 DOTFILESHOME="${ZDOTDIR:-$HOME}"
 
+echo -e 'installing dotfiles...\n'
+
 # make backup folder for old dotfiles
 mkdir -p "$DOTFILESHOME"/dotfiles/backup/runcoms
 
@@ -12,13 +14,19 @@ git submodule update --init --recursive
 
 for rcfile in "$DOTFILESHOME"/dotfiles/.zprezto/runcoms/*; do
     if [ ! "${rcfile##*/}" = "README.md" ]; then
+
+        # backup old zsh file, if it exists
+        if [ -f "$DOTFILESHOME/.${rcfile##*/}" ]; then
+            mv "$DOTFILESHOME/.${rcfile##*/}" "$DOTFILESHOME"/dotfiles/backup/runcoms 
+        fi
+
         ln -s "$rcfile" "$DOTFILESHOME/.${rcfile##*/}"
     fi
 done
 
 ln -s "$DOTFILESHOME"/dotfiles/.zprezto/ "$DOTFILESHOME"/.zprezto
 
-# backup and copy all .rc files 
+# backup and copy all .rc files (eg. bashrc, bash_profile, gitconfig, etc.) 
 echo "backing up old dotfiles and linking in new ones"
 
 for rcfile in "$DOTFILESHOME"/dotfiles/runcoms/*; do
@@ -36,7 +44,6 @@ done
 echo "backing up $DOTFILESHOME/bin"
 
 if [ -d "$DOTFILESHOME"/bin ]; then
-    mkdir -p "$DOTFILESHOME"/dotfiles/backup
     cp -r "$DOTFILESHOME"/bin "$DOTFILESHOME"/dotfiles/backup
     rm -rf "$DOTFILESHOME"/bin
 fi
@@ -48,4 +55,4 @@ ln -s "$DOTFILESHOME"/dotfiles/bin "$DOTFILESHOME"/bin
 
 unset DOTFILESHOME
 
-
+echo -e '\n...done installing dotfiles'

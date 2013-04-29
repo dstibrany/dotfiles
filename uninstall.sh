@@ -2,9 +2,14 @@
 
 DOTFILESHOME="${ZDOTDIR:-$HOME}"
 
-echo "uninstalling zprezto"
+echo -e "uninstalling zprezto...\n"
 
-rm "$DOTFILESHOME"/.z*
+for rcfile in "$DOTFILESHOME"/dotfiles/.zprezto/runcoms/*; do
+    if [ ! "${rcfile##*/}" = "README.md" ]; then
+        rm -f "$DOTFILESHOME/.${rcfile##*/}"
+    fi
+    rm -f "$DOTFILESHOME/.zprezto" 
+done
 
 echo "removing current dotfiles"
 
@@ -17,7 +22,9 @@ echo "restoring old dotfiles"
 shopt -s dotglob
 
 for rcfile in "$DOTFILESHOME"/dotfiles/backup/runcoms/*; do
-    mv $rcfile "$DOTFILESHOME"
+    if [ -f "$rcfile" ]; then
+        mv $rcfile "$DOTFILESHOME"
+    fi
 done
 
 shopt -u dotglob
@@ -26,9 +33,11 @@ shopt -u dotglob
 echo "restoring bin folder"
 
 rm "$DOTFILESHOME"/bin
-cp -r "$DOTFILESHOME"/dotfiles/backup/bin "$DOTFILESHOME"
+if [ -d "$DOTFILESHOME"/dotfiles/backup/bin ]; then
+    cp -r "$DOTFILESHOME"/dotfiles/backup/bin "$DOTFILESHOME"
+fi
 rm -rf "$DOTFILESHOME"/dotfiles/backup
 
 unset DOTFILESHOME
 
-echo "done uninstalling dotfiles"
+echo -e "\n...done uninstalling dotfiles"
