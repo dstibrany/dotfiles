@@ -11,6 +11,13 @@ for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
 done
 unset file
 
+# load git aliases from zprezto
+git_aliases=~/.zprezto/modules/git/alias.zsh
+if [ -f "$git_aliases" ]; then
+    source "$git_aliases"
+fi
+unset git_aliases
+
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
 

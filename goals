@@ -6,6 +6,11 @@ X-bash support
 -osx support
 X-bin directory of useful things
 X-should backup existing files, if they exist
--git (gitconfig, gitignore, git shortcuts)
+-git (git shortcuts)
+
+aliases
+git aliases
+testing emacs
+
 
     |
