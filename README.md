@@ -29,6 +29,8 @@ features
 
 todo
 ----
+- make function git-current-branch work in bash
+- get dirs stuff working in bash
 - make sure install script doesn't do anything wacky and is not too verbose when it's run a 2nd time (before an uninstall)
 - figure out a way for new dotfiles to be symlinked in (related to above point)
 - .vimrc support
