@@ -3,6 +3,23 @@
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH"
 
+# LS_COLORS
+export LSCOLORS='exfxcxdxbxGxDxabagacad'
+
+# Define colors for the completion system.
+export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=36;01:cd=33;01:su=31;40;07:sg=36;40;07:tw=32;40;07:ow=33;40;07:'
+
+# Detect which `ls` flavor is in use
+if ls --color > /dev/null 2>&1; then # GNU `ls`
+    colorflag="--color"
+else # OS X `ls`
+    colorflag="-G"
+fi
+alias ls='ls ${colorflag}'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
@@ -17,17 +34,6 @@ if [ -f "$git_aliases" ]; then
     source "$git_aliases"
 fi
 unset git_aliases
-
-# LS_COLORS
-export LSCOLORS='exfxcxdxbxGxDxabagacad'
-
-# Define colors for the completion system.
-export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=36;01:cd=33;01:su=31;40;07:sg=36;40;07:tw=32;40;07:ow=33;40;07:'
-
-alias ls='ls -G --color=auto'
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
