@@ -1,14 +1,40 @@
 dotfiles
 ========
 
-goals
------
+how to install
+----------
+    cd ~
+    git clone git@github.com:dstibrany/dotfiles.git 
+    cd dotfiles
+    ./install.sh
 
-- should be able to install on any system in one command
-- should be able to update (upstream/downstream) in one command
-- prezto as zsh framework
+All existing dotfiles that would have been overwritten are moved to ~/dotfiles/backup/runcoms
+
+Anything that was in your ~/bin will be moved to ~/dotfiles/backup/bin
+
+how to uninstall
+----------------
+    cd ~/dotfiles
+    ./uninstall.sh
+
+All your old dotfiles will be then be restored.
+
+features
+--------
+- can be installed and uninstalled in with one command
+- uses zprezto as zsh framework
 - bash support
-- sublime support
-- osx support
-- bin directory of useful things
-- should backup existing files, if they exist
+- backs up and existing dotfile that would be overwritten
+- all dotfiles are symlinks to files in the /dotfiles dir, so keeping things in sync with git is easy
+
+todo
+----
+- make sure install script doesn't do anything wacky and is not too verbose when it's run a 2nd time (before an uninstall)
+- figure out a way for new dotfiles to be symlinked in (related to above point)
+- .vimrc support
+- make a dotfiles executable to do things like dotfiles update, dotfiles sync, dotfiles uninstall, etc
+- would be nice to be able to update (upstream/downstream) in one command (see above)
+- sublime defaults support
+- more osx defaults
+- get ctrl-backspace working with bash
+- figure out a way to easily load some iterm defaults

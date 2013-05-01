@@ -10,7 +10,7 @@ mkdir -p "$DOTFILESHOME"/dotfiles/backup/runcoms
 #install prezto (https://github.com/dstibrany/prezto)
 echo 'installing prezto'
 
-git submodule update --init --recursive
+git submodule update --init --recursive --quiet
 
 for rcfile in "$DOTFILESHOME"/dotfiles/.zprezto/runcoms/*; do
     if [ ! "${rcfile##*/}" = "README.md" ]; then
