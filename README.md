@@ -40,3 +40,9 @@ todo
 - more osx defaults
 - get ctrl-backspace working with bash
 - figure out a way to easily load some iterm defaults
+
+bugs
+----
+- zsh-syntax-highlighting root module causes growls on keypresses
+- figure out which file to add npm/bin folder to path
+- get a good set of LESS options going
