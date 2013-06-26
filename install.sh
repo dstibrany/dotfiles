@@ -15,8 +15,8 @@ git submodule update --init --recursive --quiet
 for rcfile in "$DOTFILESHOME"/dotfiles/.zprezto/runcoms/*; do
     if [ ! "${rcfile##*/}" = "README.md" ]; then
 
-        # backup old zsh file, if it exists
-        if [ -f "$DOTFILESHOME/.${rcfile##*/}" ]; then
+        # backup old zsh file, if it exists and is not a symlink
+        if [ -f "$DOTFILESHOME/.${rcfile##*/}" ] && [ ! -L "$DOTFILESHOME/.${rcfile##*/}" ]; then
             mv "$DOTFILESHOME/.${rcfile##*/}" "$DOTFILESHOME"/dotfiles/backup/runcoms 
         fi
 
@@ -32,7 +32,7 @@ echo "backing up old dotfiles and linking in new ones"
 for rcfile in "$DOTFILESHOME"/dotfiles/runcoms/*; do
     
     # backup old dotfile, if it exists
-    if [ -f "$DOTFILESHOME/.${rcfile##*/}" ]; then
+    if [ -f "$DOTFILESHOME/.${rcfile##*/}" ] && [ ! -L "$DOTFILESHOME/.${rcfile##*/}" ]; then
         mv "$DOTFILESHOME/.${rcfile##*/}" "$DOTFILESHOME"/dotfiles/backup/runcoms
     fi
     
