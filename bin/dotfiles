@@ -1,0 +1,22 @@
+#!/bin/bash
+
+DOTFILESHOME="${ZDOTDIR:-$HOME}"
+
+usage () {
+    echo "Usage: $0 install|push|pull"
+    exit 1
+}
+
+if [ ! $# -eq 1 ]; then
+    usage
+fi
+
+if [ "$@" = "uninstall" ]; then
+    exec "$DOTFILESHOME/dotfiles/uninstall.sh"
+elif [ "$@" = "push" ]; then
+    exec "$DOTFILESHOME/dotfiles/push.sh"
+elif [ "$@" = "pull" ]; then
+    exec "$DOTFILESHOME/dotfiles/pull.sh"
+else
+    usage
+fi
