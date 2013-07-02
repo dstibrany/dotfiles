@@ -14,10 +14,22 @@ Anything that was in your ~/bin will be moved to ~/dotfiles/backup/bin
 
 how to uninstall
 ----------------
-    cd ~/dotfiles
-    ./uninstall.sh
+    dotfiles uninstall
 
 All your old dotfiles will be then be restored.
+
+how to pull down upstream changes
+---------------------------------
+    dotfiles pull
+
+This will ensure that your dotfiles are updated with the latest changes
+
+how to push your changes upstream
+---------------------------------
+    dotfiles push
+
+Support for the feature is coming soon.
+
 
 features
 --------
@@ -29,6 +41,7 @@ features
 
 todo
 ----
+- dotfiles push command
 - make function git-current-branch work in bash
 - get dirs stuff working in bash
 - .vimrc support
