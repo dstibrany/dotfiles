@@ -2,7 +2,7 @@ dotfiles
 ========
 
 how to install
-----------
+--------------
     cd ~
     git clone git@github.com:dstibrany/dotfiles.git 
     cd dotfiles
