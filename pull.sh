@@ -19,4 +19,6 @@ else
             ln -s "$rcfile" "$DOTFILESHOME/.${rcfile##*/}"
         fi
     done
+
+    echo "dotfiles are up to date"
 fi
