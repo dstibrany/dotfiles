@@ -4,8 +4,7 @@ DOTFILESHOME="${ZDOTDIR:-$HOME}"
 
 cd "$DOTFILESHOME"/dotfiles
 
-# TODO remove !
-if [ ! -n "$(git status --porcelain)" ]; then
+if [ -n "$(git status --porcelain)" ]; then
     echo "You have uncommited changes, please commit your changes first"
 else
     # update everything
