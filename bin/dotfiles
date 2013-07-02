@@ -3,7 +3,7 @@
 DOTFILESHOME="${ZDOTDIR:-$HOME}"
 
 usage () {
-    echo "Usage: $0 install|push|pull"
+    echo "Usage: $0 uninstall|push|pull"
     exit 1
 }
 
