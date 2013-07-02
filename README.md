@@ -1,12 +1,17 @@
 dotfiles
 ========
 
+features
+--------
+- can be installed and uninstalled in with one command
+- uses zprezto as zsh framework
+- bash support
+- backs up and existing dotfile that would be overwritten
+- all dotfiles are symlinks to files in the /dotfiles dir, so keeping things in sync with git is easy
+
 how to install
 --------------
-    cd ~
-    git clone git@github.com:dstibrany/dotfiles.git 
-    cd dotfiles
-    ./install.sh
+    cd ~ && git clone git@github.com:dstibrany/dotfiles.git && cd dotfiles && ./install.sh
 
 All existing dotfiles that would have been overwritten are moved to ~/dotfiles/backup/runcoms
 
@@ -22,7 +27,7 @@ how to pull down upstream changes
 ---------------------------------
     dotfiles pull
 
-This will ensure that your dotfiles are updated with the latest changes
+This will ensure that your dotfiles are updated with the latest changes.
 
 how to push your changes upstream
 ---------------------------------
@@ -30,17 +35,8 @@ how to push your changes upstream
 
 Support for the feature is coming soon.
 
+###todo
 
-features
---------
-- can be installed and uninstalled in with one command
-- uses zprezto as zsh framework
-- bash support
-- backs up and existing dotfile that would be overwritten
-- all dotfiles are symlinks to files in the /dotfiles dir, so keeping things in sync with git is easy
-
-todo
-----
 - dotfiles push command
 - make function git-current-branch work in bash
 - get dirs stuff working in bash
@@ -50,8 +46,8 @@ todo
 - get ctrl-backspace working with bash
 - figure out a way to easily load some iterm defaults
 
-bugs
-----
+###bugs
+
 - zsh-syntax-highlighting root module causes growls on keypresses
 - figure out which file to add npm/bin folder to path
 - get a good set of LESS options going
