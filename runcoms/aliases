@@ -17,3 +17,5 @@ alias sl='ls'            # I often screw this up.
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+
+alias s='subl'
