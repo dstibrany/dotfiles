@@ -3,10 +3,10 @@ dotfiles
 
 features
 --------
-- can be installed and uninstalled in with one command
+- can be installed and uninstalled with one command
 - uses zprezto as zsh framework
 - bash support
-- backs up and existing dotfile that would be overwritten
+- backs up any existing dotfile that would be overwritten
 - all dotfiles are symlinks to files in the /dotfiles dir, so keeping things in sync with git is easy
 
 how to install
