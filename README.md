@@ -45,10 +45,9 @@ Support for the feature is coming soon.
 - sublime defaults support
 - more osx defaults
 - get ctrl-backspace working with bash
-- figure out a way to easily load some iterm defaults
+- updating submodules of zprezto is f'd up, need a better workflow for pulling in upstream zprezto changes
 
 ###bugs
 
-- zsh-syntax-highlighting root module causes growls on keypresses
 - figure out which file to add npm/bin folder to path
 - get a good set of LESS options going
