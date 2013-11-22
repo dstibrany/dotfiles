@@ -37,10 +37,11 @@ Support for the feature is coming soon.
 
 ###todo
 
+- check if fasd exists first in BASH
+- copy .vim folder for vim plugins
 - dotfiles push command
 - make function git-current-branch work in bash
 - get dirs stuff working in bash
-- .vimrc support
 - sublime defaults support
 - more osx defaults
 - get ctrl-backspace working with bash
