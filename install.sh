@@ -53,6 +53,19 @@ echo "linking $DOTFILESHOME/bin"
 
 ln -s "$DOTFILESHOME"/dotfiles/bin "$DOTFILESHOME"/bin
 
+#backup old vim directory
+echo "backing up $DOTFILESHOME/.vim"
+
+if [ -d "$DOTFILESHOME"/.vim ]; then
+    cp -r "$DOTFILESHOME"/.vim "$DOTFILESHOME"/dotfiles/backup
+    rm -rf "$DOTFILESHOME"/.vim
+fi
+
+#link new vim directory
+echo "linking $DOTFILESHOME/.vim"
+
+ln -s "$DOTFILESHOME"/dotfiles/vim "$DOTFILESHOME"/.vim
+
 unset DOTFILESHOME
 
 echo -e '\n...done installing dotfiles'
