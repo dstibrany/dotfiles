@@ -39,7 +39,6 @@ Support for the feature is coming soon.
 
 - autoinstall lesspipe and fasd
 - check if fasd exists first in BASH
-- copy .vim folder for vim plugins
 - dotfiles push command
 - make function git-current-branch work in bash
 - get dirs stuff working in bash
