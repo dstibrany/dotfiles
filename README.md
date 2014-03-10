@@ -37,7 +37,7 @@ Support for the feature is coming soon.
 
 ###todo
 
-- autoinstall lesspipe and fasd
+- autoinstall lesspipe and fasd and source-highlight
 - check if fasd exists first in BASH
 - dotfiles push command
 - make function git-current-branch work in bash
