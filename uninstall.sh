@@ -38,6 +38,14 @@ if [ -d "$DOTFILESHOME"/dotfiles/backup/bin ]; then
 fi
 rm -rf "$DOTFILESHOME"/dotfiles/backup
 
+echo "restoring .vim folder"
+
+rm "$DOTFILESHOME"/.vim
+if [ -d "$DOTFILESHOME"/dotfiles/backup/vim ]; then
+    cp -r "$DOTFILESHOME"/dotfiles/backup/vim "$DOTFILESHOME/.vim"
+fi
+rm -rf "$DOTFILESHOME"/dotfiles/backup
+
 unset DOTFILESHOME
 
 echo -e "\n...done uninstalling dotfiles"

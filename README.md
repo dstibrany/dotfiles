@@ -37,17 +37,12 @@ Support for the feature is coming soon.
 
 ###todo
 
+- autoinstall lesspipe and fasd and source-highlight
 - check if fasd exists first in BASH
-- copy .vim folder for vim plugins
 - dotfiles push command
 - make function git-current-branch work in bash
 - get dirs stuff working in bash
-- sublime defaults support
 - more osx defaults
 - get ctrl-backspace working with bash
 - updating submodules of zprezto is f'd up, need a better workflow for pulling in upstream zprezto changes
 
-###bugs
-
-- figure out which file to add npm/bin folder to path
-- get a good set of LESS options going

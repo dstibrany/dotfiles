@@ -19,3 +19,4 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 
 alias s='subl'
+alias a='atom'
