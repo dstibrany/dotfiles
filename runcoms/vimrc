@@ -9,6 +9,7 @@ filetype plugin indent on
 syntax enable
 set background=dark
 colorscheme solarized
+call togglebg#map("<F5>")
 
 " easy motion
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
@@ -29,3 +30,10 @@ let g:EasyMotion_smartcase = 1
 " JK motions: Line motions
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
+
+" Yank text to the OS X clipboard
+noremap <leader>y "*y
+noremap <leader>yy "*Y
+
+" Preserve indentation while pasting text from the OS X clipboard
+noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
