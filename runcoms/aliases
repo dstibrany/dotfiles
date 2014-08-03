@@ -33,3 +33,4 @@ alias type='type -a'
 
 alias s='subl'
 alias a='atom'
+alias vim="stty stop '' -ixoff; vim" // allows ctrl-s to save
