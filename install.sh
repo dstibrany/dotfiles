@@ -17,7 +17,7 @@ for rcfile in "$DOTFILESHOME"/dotfiles/.zprezto/runcoms/*; do
 
         # backup old zsh file, if it exists and is not a symlink
         if [ -f "$DOTFILESHOME/.${rcfile##*/}" ] && [ ! -L "$DOTFILESHOME/.${rcfile##*/}" ]; then
-            mv "$DOTFILESHOME/.${rcfile##*/}" "$DOTFILESHOME"/dotfiles/backup/runcoms 
+            mv "$DOTFILESHOME/.${rcfile##*/}" "$DOTFILESHOME"/dotfiles/backup/runcoms
         fi
 
         ln -s "$rcfile" "$DOTFILESHOME/.${rcfile##*/}"
@@ -26,16 +26,16 @@ done
 
 ln -s "$DOTFILESHOME"/dotfiles/.zprezto/ "$DOTFILESHOME"/.zprezto
 
-# backup and copy all .rc files (eg. bashrc, bash_profile, gitconfig, etc.) 
+# backup and copy all .rc files (eg. bashrc, bash_profile, gitconfig, etc.)
 echo "backing up old dotfiles and linking in new ones"
 
 for rcfile in "$DOTFILESHOME"/dotfiles/runcoms/*; do
-    
+
     # backup old dotfile, if it exists
     if [ -f "$DOTFILESHOME/.${rcfile##*/}" ] && [ ! -L "$DOTFILESHOME/.${rcfile##*/}" ]; then
         mv "$DOTFILESHOME/.${rcfile##*/}" "$DOTFILESHOME"/dotfiles/backup/runcoms
     fi
-    
+
     # link new dotfile
     ln -s "$rcfile" "$DOTFILESHOME/.${rcfile##*/}"
 done

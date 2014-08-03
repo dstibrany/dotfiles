@@ -1,17 +1,29 @@
+" defaults
+" --------
+inoremap jj <ESC>
 let mapleader=","
+filetype plugin indent on
+syntax on
+set encoding=utf-8
+set number
 
 " pathogen
+" --------
 execute pathogen#infect()
-syntax on
-filetype plugin indent on
 
 " solarized
-syntax enable
+" ---------
 set background=dark
 colorscheme solarized
 call togglebg#map("<F5>")
 
+" airline
+" -------
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'base16'
+
 " easy motion
+" -----------
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
 " Bi-directional find motion
@@ -32,6 +44,7 @@ map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
 " Yank text to the OS X clipboard
+" -------------------------------
 noremap <leader>y "*y
 noremap <leader>yy "*Y
 
