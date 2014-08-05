@@ -5,7 +5,14 @@ let mapleader=","
 filetype plugin indent on
 syntax on
 set encoding=utf-8
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
 set number
+set showmatch  " highlight matching [{()}]
+set wildmenu   " visual autocomplete for command menu
+set cursorline " highlight current line
 
 " Use CTRL-S for saving, also in Insert mode
 noremap <C-S> :update<CR>

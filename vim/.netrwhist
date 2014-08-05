@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/var/hubdoc/hdrobots/saved_pages/214ae200-acaf-11e0-a9c9-12313d1a7a2a'
-let g:netrw_dirhist_2='/home/daves/.vim'
-let g:netrw_dirhist_3='/home/daves/hdrobots/saved_pages/martinlmccourt@gmail.com/2770'
-let g:netrw_dirhist_4='/var/hubdoc/hdrobots/saved_pages/jnhalperin@gmail.com/3100'
