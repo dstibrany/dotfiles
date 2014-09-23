@@ -8,6 +8,7 @@ features
 - bash support
 - backs up any existing dotfile that would be overwritten
 - all dotfiles are symlinks to files in the /dotfiles dir, so keeping things in sync with git is easy
+- great Vim and Tmux support (plugins, themes, defaults)
 
 how to install
 --------------
@@ -37,12 +38,10 @@ Support for the feature is coming soon.
 
 ###todo
 
-- autoinstall lesspipe and fasd and source-highlight
-- check if fasd exists first in BASH
+- autoinstall lesspipe and source-highlight
 - dotfiles push command
-- make function git-current-branch work in bash
-- get dirs stuff working in bash
+- make function `git-current-branch` work in bash
+- get `dirs` stuff working in bash
 - more osx defaults
 - get ctrl-backspace working with bash
 - updating submodules of zprezto is f'd up, need a better workflow for pulling in upstream zprezto changes
-
