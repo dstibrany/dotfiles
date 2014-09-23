@@ -12,7 +12,7 @@ features
 
 how to install
 --------------
-    cd ~ && git clone git@github.com:dstibrany/dotfiles.git && cd dotfiles && ./install.sh
+    cd ~ && git clone https://github.com/dstibrany/dotfiles.git && cd dotfiles && ./install.sh
 
 All existing dotfiles that would have been overwritten are moved to ~/dotfiles/backup/runcoms
 
