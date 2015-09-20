@@ -63,8 +63,12 @@ fi
 
 #link new vim directory
 echo "linking $DOTFILESHOME/.vim"
-
 ln -s "$DOTFILESHOME"/dotfiles/vim "$DOTFILESHOME"/.vim
+
+#install tmux plugin manager
+echo "installing tmux plugin manager"
+echo "hit prefix + I to install tmux plugins"
+git clone https://github.com/tmux-plugins/tpm "$DOTFILESHOME"/.tmux/plugins/tpm
 
 unset DOTFILESHOME
 
