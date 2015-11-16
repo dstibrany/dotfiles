@@ -1,3 +1,5 @@
+\set QUIET on
+
 -- paging
 \setenv PAGER less
 \setenv LESS -S
@@ -15,7 +17,7 @@
 \pset border 2
 
 -- colorize
-\set PROMPT1 '%[%033[2;35m%]%x%[%033[0m%]%n%[%033[1;34m%]@%/%[%033[0m%]%R%# '
+\set PROMPT1 '%[%033[2;35m%]%x%[%033[1;34m%]%n%[%033[1;31m%]@%/%[%033[0m%]%R%# '
 \set PROMPT2 '[more] %R > '
 
 --logging
@@ -28,6 +30,9 @@
 -- Autocomplete keywords (like SELECT) in upper-case, even if you started
 -- typing them in lower case.
 \set COMP_KEYWORD_CASE upper
+
+
+\unset QUIET
 
 -- greeting
 \echo '\nWelcome, my magistrate\n'
