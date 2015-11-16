@@ -1,23 +1,21 @@
--- \set PROMPT1 '%[%033[33;1m%]%x%[%033[0m%]%[%033[1m%]%/%[%033[0m%]%R%# '']]]]'
+-- paging
+\setenv PAGER less
+\setenv LESS -S
 
--- formatting
---\x auto
-
-\set VERBOSITY verbose
 -- \set ON_ERROR_ROLLBACK interactive
+\set VERBOSITY verbose
+
 -- show execution times
 \timing
 
 -- replace nulls
-\pset null (null)
+\pset null (NULL)
+
 \pset linestyle unicode
 \pset border 2
 
 -- colorize
---\set PROMPT1 '%[%033[33;1m%]%x%[%033[0m%]%[%033[1m%]%/%[%033[0m%]%R%# '
-\set PROMPT1 '%[%033[1m%]%M %n@%/%R%[%033[0m%]%# '
---harolds
---\set PROMPT1 '%[%033[1m%]%M/%/%R%[%033[0m%]%# '
+\set PROMPT1 '%[%033[2;35m%]%x%[%033[0m%]%n%[%033[1m%]@%/%R%[%033[0m%]%# '
 \set PROMPT2 '[more] %R > '
 
 --logging
