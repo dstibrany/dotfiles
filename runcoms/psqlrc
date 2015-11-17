@@ -17,7 +17,7 @@
 \pset border 2
 
 -- colorize
-\set PROMPT1 '%[%033[2;35m%]%x%[%033[1;34m%]%n%[%033[1;31m%]@%/%[%033[0m%]%R%# '
+\set PROMPT1 '%[%033[2;35m%]%x%[%033[0m%]%n%[%033[1m%]@%/%R%[%033[0m%]%# '
 \set PROMPT2 '[more] %R > '
 
 --logging
