@@ -1,5 +1,5 @@
 cd() {
-  builtin cd "$@" && ls
+    builtin cd "$@" && ls
 }
 
 aa_256 () {
@@ -9,4 +9,8 @@ aa_256 () {
     o=00$i;
     echo -e ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x;
     done )
+}
+
+growl() {
+    echo -e $'\e]9;'${*}'\007' ; return ;
 }
