@@ -12,5 +12,9 @@ aa_256 () {
 }
 
 growl() {
-    echo -e $'\e]9;'${*}'\007' ; return ;
+    if [ -n "$TMUX" ]; then
+        echo -e "\ePtmux;\e\e]9;"${*}"\007\e\\"; return;
+    else
+        echo -e $'\e]9;'${*}'\007'; return;
+    fi
 }
