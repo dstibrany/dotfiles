@@ -35,6 +35,9 @@ if [ -f "$git_aliases" ]; then
 fi
 unset git_aliases
 
+# load iterm2 shell integration
+source ~/.iterm2_shell_integration.bash
+
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
 
