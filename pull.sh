@@ -18,6 +18,7 @@ else
             echo "adding .${rcfile##*/}"
             ln -s "$rcfile" "$DOTFILESHOME/.${rcfile##*/}"
         fi
+        source "$DOTFILESHOME/.${rcfile##*/}"
     done
 
     echo "Dotfiles are up to date"
