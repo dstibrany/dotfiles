@@ -62,3 +62,6 @@ noremap <leader>yy "*Y
 
 " Preserve indentation while pasting text from the OS X clipboard
 noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
+nnoremap <F6> :set invpaste paste?<CR>
+set pastetoggle=<F6>
+set showmode
