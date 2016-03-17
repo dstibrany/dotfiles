@@ -38,7 +38,11 @@ fi
 unset git_aliases
 
 # load iterm2 shell integration
+export iterm2_hostname=$(hostname | cut -d"." -f1)
 source ~/.iterm2_shell_integration.bash
+if [[ "$iterm2_hostname" =~ ^hd1 ]]; then
+    printf "\e]1337;SetBadgeFormat=%s\a" $(echo -n "\(session.hostname)" | base64)
+fi
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
