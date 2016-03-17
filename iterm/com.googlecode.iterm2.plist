@@ -16,12 +16,18 @@
 	<integer>1</integer>
 	<key>AutoHideTmuxClientSession</key>
 	<false/>
+	<key>BadgeFontIsBold</key>
+	<true/>
+	<key>BadgeMaxHeightFraction</key>
+	<real>0.10000000149011612</real>
+	<key>BadgeMaxWidthFraction</key>
+	<real>0.40000000596046448</real>
 	<key>CheckTestRelease</key>
 	<true/>
 	<key>ClosingHotkeySwitchesSpaces</key>
 	<true/>
 	<key>CommandSelection</key>
-	<true/>
+	<false/>
 	<key>Control</key>
 	<integer>1</integer>
 	<key>CopyLastNewline</key>
@@ -890,7 +896,7 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>80 193 592 584 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 25 1280 752 0 0 1280 777 </string>
+	<string>0 4 1280 773 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>152 99 810 552 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1064,6 +1070,8 @@
 			<key>Background Image Is Tiled</key>
 			<false/>
 			<key>Background Image Location</key>
+			<string></string>
+			<key>Badge Text</key>
 			<string></string>
 			<key>Blend</key>
 			<real>0.30000001192092896</real>
@@ -2346,12 +2354,16 @@
 			<true/>
 			<key>Use Canonical Parser</key>
 			<false/>
+			<key>Use Cursor Guide</key>
+			<false/>
 			<key>Use HFS Plus Mapping</key>
 			<false/>
 			<key>Use Italic Font</key>
 			<true/>
 			<key>Use Non-ASCII Font</key>
 			<true/>
+			<key>Use Tab Color</key>
+			<false/>
 			<key>Vertical Spacing</key>
 			<real>1</real>
 			<key>Visual Bell</key>
@@ -2368,16 +2380,50 @@
 	<true/>
 	<key>NoSyncDoNotWarnBeforeMultilinePaste_selection</key>
 	<integer>0</integer>
+	<key>NoSyncLastTipTime</key>
+	<real>479870246.69225502</real>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
+	<key>NoSyncPermissionToShowTip</key>
+	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>477038056.22201699</real>
 	<key>NoSyncTimeOfLastPromo</key>
 	<real>453573651.84107703</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>477043008.88848799</real>
+	<real>479606372.51948702</real>
+	<key>NoSyncTipsToNotShow</key>
+	<array>
+		<string>000</string>
+		<string>000</string>
+		<string>0000</string>
+		<string>0001</string>
+		<string>0002</string>
+		<string>0003</string>
+		<string>0004</string>
+		<string>0005</string>
+		<string>0006</string>
+		<string>0007</string>
+		<string>0008</string>
+		<string>0009</string>
+		<string>0010</string>
+		<string>0011</string>
+		<string>0012</string>
+		<string>0013</string>
+		<string>0014</string>
+		<string>0015</string>
+		<string>0016</string>
+		<string>0017</string>
+		<string>0018</string>
+		<string>0019</string>
+		<string>0020</string>
+		<string>0021</string>
+		<string>0022</string>
+		<string>0023</string>
+		<string>0024</string>
+	</array>
 	<key>NoSyncTurnOffMouseReportingOnHostChange</key>
 	<true/>
 	<key>OnlyWhenMoreTabs</key>
@@ -2448,7 +2494,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-02-14T07:03:23Z</date>
+	<date>2016-03-17T01:33:10Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -2506,5 +2552,9 @@
 	<false/>
 	<key>iTerm Version</key>
 	<string>2.9.20160206</string>
+	<key>kCPKSelectionViewPreferredModeKey</key>
+	<integer>0</integer>
+	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
+	<false/>
 </dict>
 </plist>
