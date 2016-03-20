@@ -40,8 +40,9 @@ unset git_aliases
 # load iterm2 shell integration + set up badge
 source ~/.iterm2_shell_integration.bash
 function iterm2_print_user_vars() {
-    if [[ "$iterm2_hostname" =~ ^hd ]]; then
-        iterm2_set_user_var hostname $(hostname | cut -d"." -f1)
+    local host=$(hostname | cut -d"." -f1)
+    if [[ "$host" =~ ^ds ]]; then
+        iterm2_set_user_var hostname "$host"
     fi
 }
 printf "\e]1337;SetBadgeFormat=%s\a" $(echo -n "\(user.hostname)" | base64)
