@@ -19,7 +19,7 @@ color-ssh() {
     if [[ -n "$ITERM_SESSION_ID" ]]; then
 
         trap "tab-reset" INT EXIT
-        if [[ "$*" =~ "^hd1" ]]; then
+        if [[ "$*" =~ "^hd" ]]; then
             tab-color 255 0 0
         else
             tab-color 0 255 0
