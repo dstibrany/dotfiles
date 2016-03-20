@@ -41,8 +41,9 @@ unset git_aliases
 source ~/.iterm2_shell_integration.bash
 function iterm2_print_user_vars() {
     local host=$(hostname | cut -d"." -f1)
-    if [[ "$host" =~ ^ds ]]; then
+    if [[ "$host" =~ ^hd ]]; then
         iterm2_set_user_var hostname "$host"
+    else iterm2_set_user_var hostname ""
     fi
 }
 printf "\e]1337;SetBadgeFormat=%s\a" $(echo -n "\(user.hostname)" | base64)
