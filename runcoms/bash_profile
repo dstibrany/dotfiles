@@ -11,6 +11,9 @@ export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=36;01:cd=33;01:su=31;40;07:sg
 
 export EDITOR=vim
 
+# cache this because it's used a couple of times
+export _host=$(hostname | cut -d"." -f1)
+
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
     colorflag="--color"
@@ -40,9 +43,8 @@ unset git_aliases
 # load iterm2 shell integration + set up badge
 source ~/.iterm2_shell_integration.bash
 function iterm2_print_user_vars() {
-    local host=$(hostname | cut -d"." -f1)
-    if [[ "$host" =~ ^hd ]]; then
-        iterm2_set_user_var hostname "$host"
+    if [[ "${_host}" =~ ^hd ]]; then
+        iterm2_set_user_var hostname "${_host}"
     else iterm2_set_user_var hostname ""
     fi
 }

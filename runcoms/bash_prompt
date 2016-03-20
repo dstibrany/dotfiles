@@ -16,11 +16,13 @@ if tput setaf 1 &> /dev/null; then
       PINK=$(tput setaf 219)
       PURPLE=$(tput setaf 141)
       YELLOW=$(tput setaf 185)
+      RED=$(tput setaf 1)
     else
       LIGHTBLUE=$(tput setaf 4)
       PINK=$(tput setaf 5)
       PURPLE=$(tput setaf 13)
       YELLOW=$(tput setaf 3)
+      RED=$(tput setaf 1)
     fi
     BOLD=$(tput bold)
     RESET=$(tput sgr0)
@@ -29,14 +31,21 @@ else
     PINK="\033[35m"
     PURPLE="\033[1;35m"
     YELLOW="\033[33m"
+    RED="\033[31m"
     BOLD=""
     RESET="\033[m"
+fi
+
+if [[ "${_host}" =~ ^hd ]]; then
+    SYMBOL_COLOR=$RED
+else
+    SYMBOL_COLOR=$RESET
 fi
 
 if [ `id -u` = 0 ]; then
     export PS1="\n\[${LIGHTBLUE}\]\u \[$RESET\]at \[$PINK\]\h \[$RESET\]in \[$YELLOW\]\w\[$PURPLE\]\$(__git_ps1)\[$RESET\]\n# \[$RESET\]"
 else
-    export PS1="\n\[${LIGHTBLUE}\]\u \[$RESET\]at \[$PINK\]\h \[$RESET\]in \[$YELLOW\]\w\[$PURPLE\]\$(__git_ps1)\[$RESET\]\n\$ \[$RESET\]"
+    export PS1="\n\[${LIGHTBLUE}\]\u \[$RESET\]at \[$PINK\]\h \[$RESET\]in \[$YELLOW\]\w\[$PURPLE\]\$(__git_ps1)\[$RESET\]\n\[$SYMBOL_COLOR\]\$ \[$RESET\]"
 fi
 export PS2="\[$LIGHTBLUE\]→ \[$RESET\]"
 
