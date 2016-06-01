@@ -50,12 +50,10 @@ fi
 
 #link new bin directory
 echo "linking $DOTFILESHOME/bin"
-
 ln -s "$DOTFILESHOME"/dotfiles/bin "$DOTFILESHOME"/bin
 
 #backup old vim directory
 echo "backing up $DOTFILESHOME/.vim"
-
 if [ -d "$DOTFILESHOME"/.vim ]; then
     cp -r "$DOTFILESHOME"/.vim "$DOTFILESHOME"/dotfiles/backup
     rm -rf "$DOTFILESHOME"/.vim
@@ -64,6 +62,11 @@ fi
 #link new vim directory
 echo "linking $DOTFILESHOME/.vim"
 ln -s "$DOTFILESHOME"/dotfiles/vim "$DOTFILESHOME"/.vim
+
+#link iterm directory
+echo "linking $DOTFILESHOME/.iterm"
+rm -rf "$DOTFILESHOME"/.iterm
+ln -s "$DOTFILESHOME"/dotfiles/iterm "$DOTFILESHOME"/.iterm
 
 #install tmux plugin manager
 echo "installing tmux plugin manager"
