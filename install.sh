@@ -68,11 +68,6 @@ echo "linking $DOTFILESHOME/.iterm"
 rm -rf "$DOTFILESHOME"/.iterm
 ln -s "$DOTFILESHOME"/dotfiles/iterm "$DOTFILESHOME"/.iterm
 
-#install tmux plugin manager
-echo "installing tmux plugin manager"
-echo "hit prefix + I to install tmux plugins"
-git clone https://github.com/tmux-plugins/tpm "$DOTFILESHOME"/.tmux/plugins/tpm
-
 unset DOTFILESHOME
 
 echo -e '\n...done installing dotfiles'
