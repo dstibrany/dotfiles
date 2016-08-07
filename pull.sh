@@ -20,8 +20,11 @@ else
         fi
     done
 
-    echo "compiling ~/.lesskey into ~/.less"
-    lesskey -o "$DOTFILESHOME"/.less -- "$DOTFILESHOME"/.lesskey
+    if [ ! -f "$DOTFILESHOME"/.less ] || [ "$DOTFILESHOME"/.lesskey -nt "$DOTFILESHOME"/.less ]; then
+        echo "Compiling ~/.lesskey into ~/.less"
+        lesskey -o "$DOTFILESHOME"/.less -- "$DOTFILESHOME"/.lesskey
+    fi
 
-    echo "Dotfiles are up to date"
+
+    echo "Dotfiles are up to date!"
 fi
