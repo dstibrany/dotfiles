@@ -68,6 +68,10 @@ echo "linking $DOTFILESHOME/.iterm"
 rm -rf "$DOTFILESHOME"/.iterm
 ln -s "$DOTFILESHOME"/dotfiles/iterm "$DOTFILESHOME"/.iterm
 
+# compile lesskey file
+echo "compiling ~/.lesskey into ~/.less"
+lesskey -o "$DOTFILESHOME"/.less -- "$DOTFILESHOME"/.lesskey
+
 unset DOTFILESHOME
 
 echo -e '\n...done installing dotfiles'
