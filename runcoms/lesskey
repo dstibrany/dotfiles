@@ -14,5 +14,5 @@ f           forw-screen-force
 # Make less use case-insensitive search by default (-i)
 # and display color (-R).
 #env
-LESS = -i -R -S
+LESS = -i -R
 # Source: https://ascending.wordpress.com/2011/02/11/unix-tip-make-less-more-friendly/
