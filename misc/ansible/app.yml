@@ -1,0 +1,30 @@
+---
+
+- name: Create app directory
+  file: path=~/app state=directory mode=0755
+
+- name: Create log directory
+  file: path=~/app/log state=directory mode=0755
+
+- name: Add server app
+  copy: src={{ item }} dest=~/app/{{ item }}
+  with_items:
+    - package.json
+    - server.js
+
+- name: Copy run file
+  copy: src=run dest=~/app/run mode=0755
+
+- name: Copy log run file
+  copy: src=logrun dest=~/app/log/run mode=0755
+
+- name: NPM install
+  npm: path=~/app state=latest
+
+- name: Create runit server
+  become: true
+  file: src=/home/ubuntu/app dest=/etc/service/server state=link mode=0755
+
+- name: Restart service
+  become: true
+  shell: cd /home/ubuntu/app && sudo sv restart .

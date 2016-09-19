@@ -1,0 +1,32 @@
+- name: Install tmux dependencies
+  become: true
+  apt: pkg={{ item }} state=installed update_cache=true cache_valid_time=3600
+  with_items:
+  - libevent-dev
+  - ncurses-dev
+
+- name: Check if tmux exists
+  stat: path=/usr/local/bin/tmux
+  register: tmux
+
+- name: Download and unzip tmux
+  become: true
+  unarchive:
+    src=https://github.com/tmux/tmux/releases/download/2.2/tmux-2.2.tar.gz
+    dest=/tmp
+    copy=no
+  when: tmux.stat.exists == False
+
+- name: Configure tmux
+  become: true
+  command: ./configure
+  args:
+    chdir: /tmp/tmux-2.2
+  when: tmux.stat.exists == False
+
+- name: Install tmux
+  become: true
+  make:
+    chdir: /tmp/tmux-2.2
+    target: install
+  when: tmux.stat.exists == False

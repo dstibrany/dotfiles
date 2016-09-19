@@ -1,0 +1,27 @@
+---
+- hosts: ec2
+
+  pre_tasks:
+  - name: Install apt packages
+    become: true
+    apt: name={{ item  }} update_cache=yes cache_valid_time=3600
+    with_items:
+      - git
+      - runit
+      - build-essential
+
+  - stat: path=/home/ubuntu/dotfiles
+    register: dotfiles
+
+  - name: Install dotfiles
+    shell: cd ~ && git clone https://github.com/dstibrany/dotfiles.git && cd dotfiles && ./install.sh
+    when: dotfiles.stat.exists == False
+
+  - include: tmux.yml
+
+  roles:
+    - { role: debops.nodejs, nodejs__upstream_version: 'node_4.x', nodejs__upstream: True, become: True }
+
+  post_tasks:
+  - include: app.yml
+

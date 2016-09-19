@@ -1,0 +1,12 @@
+{
+    "name": "server",
+    "version": "0.0.1",
+    "dependencies": {
+        "express": "",
+        "morgan": ""
+    },
+    "main": "index",
+    "engines": {
+        "node": ">= 0.4.1"
+    }
+}
