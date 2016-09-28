@@ -102,3 +102,7 @@ function fasd_cd {
 
 alias j='fasd_cd -i'
 _fasd_bash_hook_cmd_complete j
+
+# nvm support
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
