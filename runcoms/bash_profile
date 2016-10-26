@@ -25,6 +25,16 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
+# load iterm2 shell integration + set up badge
+[ "$TERM" -eq linux ] || source ~/.iterm2_shell_integration.bash
+function iterm2_print_user_vars() {
+    if [[ "${_host}" =~ ^hd ]]; then
+        iterm2_set_user_var hostname "${_host}"
+    else iterm2_set_user_var hostname ""
+    fi
+}
+printf "\e]1337;SetBadgeFormat=%s\a" $(echo -n "\(user.hostname)" | base64)
+
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
@@ -39,16 +49,6 @@ if [ -f "$git_aliases" ]; then
     source "$git_aliases"
 fi
 unset git_aliases
-
-# load iterm2 shell integration + set up badge
-source ~/.iterm2_shell_integration.bash
-function iterm2_print_user_vars() {
-    if [[ "${_host}" =~ ^hd ]]; then
-        iterm2_set_user_var hostname "${_host}"
-    else iterm2_set_user_var hostname ""
-    fi
-}
-printf "\e]1337;SetBadgeFormat=%s\a" $(echo -n "\(user.hostname)" | base64)
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
@@ -81,7 +81,6 @@ which grunt > /dev/null && eval "$(grunt --completion=bash)"
 
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
-
 
 # fasd setup
 fasd_cache="$HOME/.fasd-init-bash"
