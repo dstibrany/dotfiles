@@ -41,8 +41,6 @@ Support for the feature is coming soon.
 
 - autoinstall lesspipe and source-highlight
 - ssh config
-- lesskey
 - clipper for osx, brew for osx
 - get `dirs` stuff working in bash
-- bash colors in terminal are messed
 - dotfiles push command
