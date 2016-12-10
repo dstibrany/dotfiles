@@ -1,17 +1,32 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-Vagrant.configure("2") do |config|
+VAGRANTFILE_API_VERSION = "2"
+NODE_COUNT = 2
 
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+    #config.vm.synced_folder "/Users/dstibrany/code/golang/src/", "/home/vagrant/code/golang/src"
+    config.vbguest.auto_update = false
     config.vm.box = "ubuntu/trusty64"
-    config.vm.define "node1" do |node1|
-        node1.vm.box = "ubuntu/trusty64"
-        node1.vm.network "private_network", ip: "192.168.50.4"
 
+    config.vm.provider "virtualbox" do |vb|
+        vb.memory = "1024"
+        vb.cpus = "1"
     end
 
-    config.vm.define "node2" do |node2|
-        node2.vm.box = "ubuntu/trusty64"
-        node2.vm.network "private_network", ip: "192.168.50.5"
+    config.vm.provision "ansible" do |ansible|
+        ansible.playbook = "ansible/playbook-basic.yml"
+        ansible.inventory_path = "ansible/hosts"
+        ansible.limit = "all"
+    end
+
+    NODE_COUNT.times do |i|
+        id = i + 1
+        node_id = "node#{id}"
+        config.vm.define node_id do |node|
+            node.vm.network :forwarded_port, guest: 22, host: "222#{id}", id: "ssh"
+            node.vm.network "private_network", ip: "192.168.50.1#{id}"
+            node.vm.hostname = node_id
+        end
     end
 end
