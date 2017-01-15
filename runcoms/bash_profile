@@ -11,6 +11,9 @@ export EDITOR=vim
 # cache this because it's used a couple of times
 export _host=$(hostname | cut -d"." -f1)
 
+# forward search
+stty -ixon
+
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
     colorflag="--color"
@@ -70,12 +73,6 @@ done
 # You could just use `-g` instead, but I like being explicit
 complete -W "NSGlobalDomain" defaults
 
-# Add `killall` tab completion for common apps
-complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall
-
-# Autocomplete Grunt commands
-which grunt > /dev/null && eval "$(grunt --completion=bash)"
-
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
 
@@ -96,7 +93,7 @@ function fasd_cd {
   fi
 }
 
-alias j='fasd_cd -i'
+alias j='fasd_cd'
 _fasd_bash_hook_cmd_complete j
 
 # nvm support
