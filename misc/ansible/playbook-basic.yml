@@ -9,7 +9,7 @@
       - git
       - build-essential
 
-  - stat: path=/home/ubuntu/dotfiles
+  - stat: path=/home/{{ ansible_user }}/dotfiles
     register: dotfiles
 
   - name: Install dotfiles

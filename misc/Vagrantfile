@@ -14,12 +14,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         vb.cpus = "1"
     end
 
-    config.vm.provision "ansible" do |ansible|
-        ansible.playbook = "ansible/playbook-basic.yml"
-        ansible.inventory_path = "ansible/hosts"
-        ansible.limit = "all"
-    end
-
     NODE_COUNT.times do |i|
         id = i + 1
         node_id = "node#{id}"

@@ -21,10 +21,6 @@
 - name: NPM install
   npm: path=~/app state=latest
 
-- name: Create runit server
+- name: Create runit service
   become: true
-  file: src=/home/ubuntu/app dest=/etc/service/server state=link mode=0755
-
-- name: Restart service
-  become: true
-  shell: cd /home/ubuntu/app && sudo sv restart .
+  file: src=/home/{{ ansible_user }}/app dest=/etc/service/server state=link mode=0755
