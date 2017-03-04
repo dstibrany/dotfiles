@@ -1,1 +1,2 @@
 export GOPATH=$HOME/code/golang
+export GOROOT=/usr/local/go
