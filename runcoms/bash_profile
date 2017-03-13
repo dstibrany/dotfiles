@@ -1,5 +1,3 @@
-# credit: Mathias Bynens (https://github.com/mathiasbynens/dotfiles)
-
 # LS_COLORS
 export LSCOLORS='exfxcxdxbxGxDxabagacad'
 
@@ -95,6 +93,10 @@ function fasd_cd {
 
 alias j='fasd_cd'
 _fasd_bash_hook_cmd_complete j
+
+# Better autocomplete (https://superuser.com/questions/288714/bash-autocomplete-like-zsh)
+bind 'set show-all-if-ambiguous on'
+bind 'TAB:menu-complete'
 
 # nvm support
 export NVM_DIR="$HOME/.nvm"
