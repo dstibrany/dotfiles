@@ -10,7 +10,8 @@ export EDITOR=vim
 export _host=$(hostname | cut -d"." -f1)
 
 # forward search
-stty -ixon
+# see http://stackoverflow.com/questions/24623021/getting-stty-standard-input-inappropriate-ioctl-for-device-when-using-scp-thro
+[[ $- == *i* ]] && stty -ixon
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
