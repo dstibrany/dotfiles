@@ -96,7 +96,7 @@ alias j='fasd_cd'
 _fasd_bash_hook_cmd_complete j
 
 # Better autocomplete (https://superuser.com/questions/288714/bash-autocomplete-like-zsh)
-if [[ $- == *i* ]] then;
+if [[ $- == *i* ]]; then
   bind 'set show-all-if-ambiguous on'
   bind 'TAB:menu-complete'
 fi
