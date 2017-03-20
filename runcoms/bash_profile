@@ -96,8 +96,10 @@ alias j='fasd_cd'
 _fasd_bash_hook_cmd_complete j
 
 # Better autocomplete (https://superuser.com/questions/288714/bash-autocomplete-like-zsh)
-bind 'set show-all-if-ambiguous on'
-bind 'TAB:menu-complete'
+if [[ $- == *i* ]] then;
+  bind 'set show-all-if-ambiguous on'
+  bind 'TAB:menu-complete'
+fi
 
 # nvm support
 export NVM_DIR="$HOME/.nvm"
