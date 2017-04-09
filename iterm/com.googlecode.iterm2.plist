@@ -904,7 +904,7 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 139 606 456 0 0 1280 777 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>269 307 770 381 0 0 1280 778 </string>
+	<string>153 242 796 473 0 0 1280 778 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>80 193 592 584 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
@@ -926,12 +926,16 @@
 			<false/>
 			<key>Ansi 0 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.19215686619281769</real>
+				<real>0.19833278656005859</real>
+				<key>Color Space</key>
+				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.15686275064945221</real>
+				<real>0.16011644899845123</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.039380736649036407</real>
 			</dict>
 			<key>Ansi 1 Color</key>
 			<dict>
@@ -1034,12 +1038,16 @@
 			</dict>
 			<key>Ansi 6 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.52549022436141968</real>
+				<real>0.52549129724502563</real>
+				<key>Color Space</key>
+				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.57254904508590698</real>
+				<real>0.5725364089012146</real>
 				<key>Red Component</key>
-				<real>0.14509804546833038</real>
+				<real>0.14692533016204834</real>
 			</dict>
 			<key>Ansi 7 Color</key>
 			<dict>
@@ -1055,13 +1063,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.15346166491508484</real>
+				<real>0.15969598293304443</real>
 				<key>Color Space</key>
 				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.11752074956893921</real>
+				<real>0.12652090191841125</real>
 				<key>Red Component</key>
-				<real>0.0080898236483335495</real>
+				<real>0.0092861400917172432</real>
 			</dict>
 			<key>Ansi 9 Color</key>
 			<dict>
@@ -1466,7 +1474,7 @@
 			<key>Log Directory</key>
 			<string></string>
 			<key>Minimum Contrast</key>
-			<real>0.0</real>
+			<real>0.18052808544303797</real>
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
@@ -1640,7 +1648,7 @@
 			<key>Use Bold Font</key>
 			<true/>
 			<key>Use Bright Bold</key>
-			<true/>
+			<false/>
 			<key>Use Canonical Parser</key>
 			<false/>
 			<key>Use Cursor Guide</key>
@@ -2407,7 +2415,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>85708811-DA49-4412-BDE9-B4594EA69A7F</string>
 	<key>NoSyncLastTipTime</key>
-	<real>486922708.01105201</real>
+	<real>512154675.21153599</real>
 	<key>NoSyncNeverAskAboutSettingAlternateMouseScroll</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
@@ -2491,6 +2499,7 @@
 		<string>0060</string>
 		<string>0061</string>
 		<string>0061</string>
+		<string>0061</string>
 	</array>
 	<key>NoSyncTurnOffMouseReportingOnHostChange</key>
 	<true/>
@@ -2564,7 +2573,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-02-07T00:48:59Z</date>
+	<date>2017-04-09T04:38:49Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -2623,7 +2632,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.13</string>
+	<string>3.0.15</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
