@@ -26,6 +26,8 @@ if [[ -n "$ITERM_SESSION_ID" ]]; then
             fi
         elif [[ "$1" =~ "^vagrant " ]]; then
             tab-color 160 160 255
+        elif [[ "$1" =~ "^gcloud.*ssh" ]]; then
+            tab-color 160 160 255
         fi
     }
 
