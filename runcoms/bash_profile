@@ -100,7 +100,3 @@ if [[ $- == *i* ]]; then
   bind 'set show-all-if-ambiguous on'
   bind 'TAB:menu-complete'
 fi
-
-# nvm support
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
