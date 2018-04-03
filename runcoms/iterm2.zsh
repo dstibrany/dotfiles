@@ -21,12 +21,12 @@ if [[ -n "$ITERM_SESSION_ID" ]]; then
         if [[ "$1" =~ "^ssh " ]]; then
             if [[ "$1" =~ "^ssh hd" ]]; then
                 tab-color 255 0 0
+            elif [[ "$1" =~ "^ssh jumpbox" ]]; then
+                tab-color 160 160 255
             else
                 tab-color 0 255 0
             fi
         elif [[ "$1" =~ "^vagrant " ]]; then
-            tab-color 160 160 255
-        elif [[ "$1" =~ "^gcloud.*ssh" ]]; then
             tab-color 160 160 255
         fi
     }
