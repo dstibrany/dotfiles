@@ -31,8 +31,7 @@ alias pu='pushd'
 alias rm="${aliases[rm]:-rm} -i"
 alias type='type -a'
 
-alias s='subl'
-alias a='atom'
+alias k='kubectl'
 alias vim="stty stop '' -ixoff; vim" # allows ctrl-s to save
 
 # clipper

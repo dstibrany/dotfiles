@@ -22,7 +22,7 @@ if [[ -n "$ITERM_SESSION_ID" ]]; then
             if [[ "$1" =~ "^ssh hd" ]]; then
                 tab-color 255 0 0
             elif [[ "$1" =~ "^ssh jumpbox" ]]; then
-                tab-color 160 160 255
+                tab-color 255 0 0
             else
                 tab-color 0 255 0
             fi

@@ -26,10 +26,10 @@ alias egrep='egrep --color=auto'
 
 # load iterm2 shell integration (but not on a linux console) + set up badge
 function iterm2_print_user_vars() {
-    if [[ "${_host}" =~ ^hd ]]; then
+#    if [[ "${_host}" =~ ^hd ]]; then
         iterm2_set_user_var hostname "${_host}"
-    else iterm2_set_user_var hostname ""
-    fi
+#    else iterm2_set_user_var hostname ""
+#    fi
 }
 [ "$TERM" == "linux" ] || source ~/.iterm2_shell_integration.bash
 printf "\e]1337;SetBadgeFormat=%s\a" $(echo -n "\(user.hostname)" | base64)
