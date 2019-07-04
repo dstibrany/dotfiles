@@ -18,3 +18,22 @@ growl() {
         echo -e $'\e]9;'${*}'\007'; return;
     fi
 }
+
+function aws {
+  aws-vault exec "${AWS_PROFILE:-default}" -- aws "$@"
+}
+
+function terraform {
+  aws-vault exec "${AWS_PROFILE:-default}" -- terraform "$@"
+}
+
+function packer {
+  aws-vault exec "${AWS_PROFILE:-default}" -- packer "$@"
+}
+
+function change_aws_profile {
+  unset AWS_VAULT
+  for v in $(aws-vault exec "${AWS_PROFILE:-default}" -- env | grep AWS_); do
+    eval "export $v"
+  done
+}
