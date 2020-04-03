@@ -9,3 +9,13 @@ inoremap <S-Left> <C-O>:action EditorLeftWithSelection<CR>
 inoremap <S-Right> <C-O>:action EditorRightWithSelection<CR>
 inoremap <S-Up> <C-O>:action EditorUpWithSelection<CR>
 inoremap <S-Down> <C-O>:action EditorDownWithSelection<CR>
+
+vnoremap <S-Left> :action EditorLeftWithSelection<CR>
+vnoremap <S-Right> :action EditorRightWithSelection<CR>
+vnoremap <S-Up> :action EditorUpWithSelection<CR>
+vnoremap <S-Down> :action EditorDownWithSelection<CR>
+
+snoremap <S-Left> :action EditorLeftWithSelection<CR>
+snoremap <S-Right> :action EditorRightWithSelection<CR>
+snoremap <S-Up> :action EditorUpWithSelection<CR>
+snoremap <S-Down> :action EditorDownWithSelection<CR>
